@@ -3,7 +3,7 @@ import os
 import random
 import pygame
 
-pygame.init()
+# pygame.init()
 
 os.system('cls' if os.name == 'nt' else 'clear'); # limpar console
 
@@ -80,7 +80,7 @@ def stringManip():
   nome = input('Digite seu nome completo: ')
   print(nome.upper())
   print(nome.lower())
-  print(len(nome))
+  print(len(nome) - nome.count(" "))
   primNome = nome.split()[0]
   print(primNome + "   |   " + str(len(primNome)) + " letras")
 # stringManip()
@@ -97,18 +97,18 @@ def lerNumero():
 
 # 24. ler cidade e verificar se ela começa com o nome santo
 def comecaComSanto():
-  cidade = input('digite o nome de uma cidade: ')
+  cidade = input('digite o nome de uma cidade: ').strip()
   listCid = cidade.split(" ", -1)
   strCid = "".join(listCid)
   if strCid[0:5].upper() == "SANTO":
-    print('vc é santo')
+    print('vc é SANTO')
   else:
-    print('vc é boca')
+    print('NÃO tem SANTO')
 # comecaComSanto()
 
 # 25. Dizer se tem silva no nome
 def temSilva():
-  nome = input('digite seu nome: ')
+  nome = input('digite seu nome: ').strip()
   encontrou = nome.lower().find("silva")
   if encontrou == -1:
     print('n tem silva')
@@ -118,14 +118,14 @@ def temSilva():
 
 # 26. ler uma frase e mostrar 1) qntas vezes aparece a letra A 2) em q posição aparece primeiro; 3) em q posição aparece por último
 def encontrarLetraA():
-  frase = input('escreva uma frase: ')
-  vezesApareceu = frase.lower().count('a')
+  frase = input('escreva uma frase: ').strip().lower()
+  vezesApareceu = frase.count('a')
   primeiroA = frase.find("a")
   ultimoA = frase.rfind("a")
   print(vezesApareceu)
   print(primeiroA)
   print(ultimoA)
-# encontrarLetraA()
+encontrarLetraA()
 
 # 27. mostrar primeiro e último nome da pessoa
 def primeiroUltimoNome():
@@ -136,3 +136,4 @@ def primeiroUltimoNome():
   print(primNome)
   print(ultNome)
 # primeiroUltimoNome()
+
