@@ -12,7 +12,7 @@ print(frase.count("t", 0)) #qntidade de vezes q o caracter foi encontrado dentro
 # Find
 print(frase.find("grin")) # encontrar cadeia de caracteres na string
 
-#-----------------------------------------------#
+#------------------------------------------------------------------------#
 # TRANSFORMACAO DE STRING
 # Replace
 print(frase.replace("gringa", "zoropa"))
@@ -26,3 +26,23 @@ print(frase.capitalize())
 
 # Title -> vai transformar em maiúsculo a cada quebra de palavra por espaço vazio
 print(frase.title())
+
+# Strip -> remover os espaços em branco do início e final da string
+fraseComEspacos = "    Olá, Matheus, tudo bom?       "
+print(fraseComEspacos)
+print(fraseComEspacos.strip())
+print(fraseComEspacos.rstrip())
+print(fraseComEspacos.lstrip())
+
+#------------------------------------------------------------------------#
+# DIVISÃO DE STRING
+# Split -> divide a string em uma lista, onde cada palavra separada por espaço será um elemento
+list = frase.split()
+print(list)
+
+# Join -> pega todos os elementos em um iterável e junta eles em uma string
+frase9 = " ".join(list)
+# frase9.join(list)
+print(frase9)
+
+#
