@@ -66,7 +66,7 @@ def sorteioOrdem2():
   # escolhidos = random.sample(alunos, k=2)
   random.shuffle(alunos)
   print(f'os escolhidos foram {alunos}')
-sorteioOrdem2()
+# sorteioOrdem2()
 
 # 21. Programa q abra e reproduza o áudio de um arquivo MP3 - usa lib pygame
 def reproduzirMP3():
@@ -74,3 +74,44 @@ def reproduzirMP3():
   pygame.mixer.music.play()
   pygame.event.wait()
 # reproduzirMP3()
+
+# 22. ler o nome da pessoa e mostrar: 1)nome em maiusculo; 2)minusculo; 3)qntidade letras 4) qntas letras no primeiro nome
+def stringManip():
+  nome = input('Digite seu nome completo: ')
+  print(nome.upper())
+  print(nome.lower())
+  print(len(nome))
+  primNome = nome.split()[0]
+  print(primNome + "   |   " + str(len(primNome)) + " letras")
+# stringManip()
+
+# 23. ler nº de 0 a 9999 e mostrar na tela cada um dos dígitos separados
+#tá errado..
+def lerNumero():
+  numero = input('Digite um nº entre 0 e 9999: ')
+  print(f"unidade: {numero[0]}")
+  print(f"dezena: {numero[1]}")
+  print(f"centena: {numero[2]}")
+  print(f"milhar: {numero[3]}")
+# lerNumero()
+
+# 24. ler cidade e verificar se ela começa com o nome santo
+def comecaComSanto():
+  cidade = input('digite o nome de uma cidade: ')
+  listCid = cidade.split(" ", -1)
+  strCid = "".join(listCid)
+  if strCid[0:5].upper() == "SANTO":
+    print('vc é santo')
+  else:
+    print('vc é boca')
+# comecaComSanto()
+
+# 25. Dizer se tem silva no nome
+def temSilva():
+  nome = input('digite seu nome: ')
+  encontrou = nome.lower().find("silva")
+  if encontrou == -1:
+    print('n tem silva')
+  else:
+    print('tem silva')
+# temSilva()

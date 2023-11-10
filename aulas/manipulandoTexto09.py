@@ -1,13 +1,13 @@
 # Fatiamento de String
 frase = "Trabalhando na gringa"
-
+print(frase[0:])
 # ANALISE DE STRING
 # Length
 print(len(frase)) #tamanho da string
 
 # Count
 print(frase.count("t")) #qntidade de vezes q o caracter foi encontrado
-print(frase.count("t", 0)) #qntidade de vezes q o caracter foi encontrado dentro do intervalo
+print(frase.count("t", 0, 10)) #qntidade de vezes q o caracter foi encontrado dentro do intervalo
 
 # Find
 print(frase.find("grin")) # encontrar cadeia de caracteres na string
