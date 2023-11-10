@@ -86,7 +86,7 @@ def stringManip():
 # stringManip()
 
 # 23. ler nº de 0 a 9999 e mostrar na tela cada um dos dígitos separados
-#tá errado..
+#tá errado...
 def lerNumero():
   numero = input('Digite um nº entre 0 e 9999: ')
   print(f"unidade: {numero[0]}")
@@ -115,3 +115,24 @@ def temSilva():
   else:
     print('tem silva')
 # temSilva()
+
+# 26. ler uma frase e mostrar 1) qntas vezes aparece a letra A 2) em q posição aparece primeiro; 3) em q posição aparece por último
+def encontrarLetraA():
+  frase = input('escreva uma frase: ')
+  vezesApareceu = frase.lower().count('a')
+  primeiroA = frase.find("a")
+  ultimoA = frase.rfind("a")
+  print(vezesApareceu)
+  print(primeiroA)
+  print(ultimoA)
+# encontrarLetraA()
+
+# 27. mostrar primeiro e último nome da pessoa
+def primeiroUltimoNome():
+  nome = input('digite seu nome completo: ');
+  listNome = nome.split();
+  primNome = listNome[0]
+  ultNome = listNome[len(listNome) - 1]
+  print(primNome)
+  print(ultNome)
+# primeiroUltimoNome()
