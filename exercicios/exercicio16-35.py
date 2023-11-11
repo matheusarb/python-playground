@@ -1,7 +1,8 @@
 import math
 import os
-import random
 import pygame
+import random
+import calendar
 
 # pygame.init()
 
@@ -125,7 +126,7 @@ def encontrarLetraA():
   print(vezesApareceu)
   print(primeiroA)
   print(ultimoA)
-encontrarLetraA()
+# encontrarLetraA()
 
 # 27. mostrar primeiro e último nome da pessoa
 def primeiroUltimoNome():
@@ -137,3 +138,88 @@ def primeiroUltimoNome():
   print(ultNome)
 # primeiroUltimoNome()
 
+# 28. usuário fala um número de 1 a 5, código gera aleatório. Verificar e se dizer se vencey
+def guessingGame():
+  rand = random.randint(1, 5)
+  n = int(input('Digite um nº de 1 a 5: '))
+  print(f'nº sorteado: {rand}')
+  if rand == n:
+    print('Parabéns, vc acertou!')
+  else:
+    print('Tente outra vez.')
+# guessingGame()
+
+# 29. > 80km = MULTA. 7 reais por cada km acima do limite
+def multa():
+  vCarro = int(input('A qntos km por hora vc estava andando?'))
+  if vCarro > 80:
+    vExcedida = vCarro - 80
+    valorMulta = vExcedida * 7
+    print(f'vc será multado no valor de {valorMulta}')
+  else:
+    print('Boa viagem!')
+# multa()
+
+# 30. par ou impar
+def parOuImpar():
+  n = int(input('Escreva um nº inteiro: '))
+  if n % 2 == 0:
+    print(f'{n} é par')
+  else:
+    print(f'{n} é ímpar')
+# parOuImpar()
+
+# 31. pergunta Distância em Km, calcula preço da passagem por 0,50 por km até 200km e 0,45 para viagens mais longas
+def calcViagem():
+  km = float(input('Qual a distancia da viagem? '))
+  precoPassagem = 0
+  if km <= 200:
+    precoPassagem = km * 0.50
+    print(f'o preço será de {precoPassagem:.2f}')
+  else:
+    precoPassagem = km * 0.45
+    print(f'o preço será de {precoPassagem:.2f}')
+# calcViagem()
+
+# 32 Dizer se ano é bissexto
+def anoBissexto():
+  ano = int(input('Digite um ano (formato em 4 dígitos): '))
+  if calendar.isleap(ano):
+    print(f'{ano} é bissexto')
+  else:
+    print(f"{ano} não é")
+# anoBissexto()
+
+# 33. mostrar maior e menor numero
+def maiorMenor():
+  n1 = int(input('Digite um nº: '))
+  n2 = int(input('Digite um nº: '))
+  n3 = int(input('Digite um nº: '))
+  largest = max(n1, n2, n3)
+  smallest = min(n1, n2, n3)
+  print(f'Maior: {largest}')
+  print(f'Menor: {smallest}')
+# maiorMenor()
+
+# 34. aumento salarial
+def aumentoSalarial():
+  salario = float(input('Qual o seu salario? '))
+  if salario > 1250.00:
+    print(f'Seu aumento será de {salario * 0.10}')
+  else:
+    print(f'Seu aumento será de {salario * 0.15}')
+# aumentoSalarial()
+
+# 35.  ler comprimento 3 retas e dizer se podem ou não formar um triângulo
+def formarTriangulo():
+  l1 = int(input('Informe o valor do lado 1: '))
+  l2 = int(input('Informe o valor do lado 2: '))
+  l3 = int(input('Informe o valor do lado 3: '))
+  ladoMaior = max(l1, l2, l3)
+  ladoMenor = min(l1, l2, l3)
+  ladoMeio = 0
+  if ladoMenor + ladoMeio > ladoMaior:
+    print('forma triangulo')
+  else:
+    print('nao forma')
+# formarTriangulo()
