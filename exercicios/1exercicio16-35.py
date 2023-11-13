@@ -252,4 +252,11 @@ def formarTriangulo():
     print('forma triangulo')
   else:
     print('nao forma')
+
+  if l1 == l2 == l3:
+    print('equilátero')
+  elif l1 == l2 and l1 != l3:
+    print('isósceles')
+  else:
+    print('escaleno')
 # formarTriangulo()

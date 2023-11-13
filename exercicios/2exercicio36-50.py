@@ -61,4 +61,59 @@ def alistamentoMilitar(anoNasc):
         print(f'Vá para a unidade mais próximo para alistamento. Seu período ({periodoParaAlistamento}) chegou.')
 # alistamentoMilitar(2010)
 
-# 40.
+# 40. média de aluno
+def mediaEscolar(n1: float, n2: float) -> print():
+    media = float((n1 + n2) / 2)
+    if media < 5:
+        print('reprovado')
+    elif 5 <= media <= 6.9:
+        print('recuperação')
+    else:
+        print('aprovado')
+# mediaEscolar(3.5, 5.5)
+# mediaEscolar(6.5, 6)
+# mediaEscolar(8.5, 9.5)
+
+# 41. ano de nascimento do nadador e determinar categoria
+def categoriaNadador(anoNasc: int):
+    anoAtual = datetime.date.today().year
+    idadeNadador = anoAtual - anoNasc
+    if idadeNadador <= 9:
+        print('mirim')
+    elif 9 < idadeNadador <= 14:
+        print('infantil')
+    elif 14 < idadeNadador <= 19:
+        print('junior')
+    elif idadeNadador == 20:
+        print('senior')
+    else:
+        print('Master')
+# categoriaNadador(2014)
+# categoriaNadador(2009)
+# categoriaNadador(2004)
+# categoriaNadador(2003)
+# categoriaNadador(2000)
+
+# 42. Foi para refazer o dos triângulos (desafio 35)
+
+# 43. calcular imc
+def calcularImc(peso: float, altura: float):
+    imc = peso / (altura ** 2)
+
+    if imc < 18.5:
+        print('abaixo do peso')
+    elif 18.5 <= imc <= 25:
+        print('ideal')
+    elif 25 < imc <= 30:
+        print('sobrepeso')
+    elif 30 < imc <= 40:
+        print('obesidade')
+    else:
+        print('obesidade mórbida')
+# calcularImc(45, 1.68)
+# calcularImc(70, 1.68)
+# calcularImc(82, 1.68)
+# calcularImc(90, 1.68)
+# calcularImc(120, 1.68)
+
+# 43.
