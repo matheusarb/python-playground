@@ -116,4 +116,24 @@ def calcularImc(peso: float, altura: float):
 # calcularImc(90, 1.68)
 # calcularImc(120, 1.68)
 
-# 43.
+# 44. calcular valor a ser pago pelo produto, considerando o preço e a FORMA DE PAGAMENTO
+def calcularProduto(preco: float):
+    formaPagamento = int(input('qual a forma de pagamento?\n1- à vista no dinheiro/cheque\n2- à vista no cartão\n3- em até 2x no cartão\n4- em até 3x ou mais no cartão'))
+    descontoDinheiroCheque = preco * 0.10
+    descontoCartao = preco * 0.05
+    jurosParceladoTres = preco * 0.20
+
+    if formaPagamento == 1:
+        print(f'produto sairá por {preco - descontoDinheiroCheque}')
+    elif formaPagamento == 2:
+        print(f'produto sairá por {preco - descontoCartao}')
+    elif formaPagamento == 4:
+        print(f'produto sairá por {preco + jurosParceladoTres}')
+    else:
+        print(f'produto sairá por {preco}')
+# calcularProduto(100)
+# calcularProduto(100)
+# calcularProduto(100)
+# calcularProduto(100)
+
+# 45. programa pra jogar jokenpô (...)
