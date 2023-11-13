@@ -3,6 +3,7 @@ import os
 import pygame
 import random
 import calendar
+from datetime import date
 
 # pygame.init()
 
@@ -155,7 +156,7 @@ def multa():
   if vCarro > 80:
     vExcedida = vCarro - 80
     valorMulta = vExcedida * 7
-    print(f'vc será multado no valor de {valorMulta}')
+    print(f'Vc será multado no valor de R$ {valorMulta:.2f}')
   else:
     print('Boa viagem!')
 # multa()
@@ -184,10 +185,16 @@ def calcViagem():
 # 32 Dizer se ano é bissexto
 def anoBissexto():
   ano = int(input('Digite um ano (formato em 4 dígitos): '))
-  if calendar.isleap(ano):
-    print(f'{ano} é bissexto')
+  if ano == 0:
+    ano = date.today().year
+  if ano % 4 == 0 and ano % 100 != 0 or ano % 400 == 0:
+    print('é bissexto')
   else:
-    print(f"{ano} não é")
+    print('não é bissexto')
+  # if calendar.isleap(ano):
+  #   print(f'{ano} é bissexto')
+  # else:
+  #   print(f"{ano} não é")
 # anoBissexto()
 
 # 33. mostrar maior e menor numero
@@ -195,29 +202,52 @@ def maiorMenor():
   n1 = int(input('Digite um nº: '))
   n2 = int(input('Digite um nº: '))
   n3 = int(input('Digite um nº: '))
-  largest = max(n1, n2, n3)
-  smallest = min(n1, n2, n3)
-  print(f'Maior: {largest}')
-  print(f'Menor: {smallest}')
+  maior = n2
+  if n1 > n2 and n1 > n3:
+    maior = n1
+  if n3 > n1 and n3 > n2:
+    maior = n3
+  menor = n2
+
+  if n1 < n2 and n1 < n3:
+    menor = n1
+  if n3 < n1 and n3 < n2:
+    menor = n3
+  print(f'Maior: {maior}')
+  print(f'Menor: {menor}')
+
+  # largest = max(n1, n2, n3)
+  # smallest = min(n1, n2, n3)
+  # print(f'Maior: {largest}')
+  # print(f'Menor: {smallest}')
 # maiorMenor()
 
 # 34. aumento salarial
 def aumentoSalarial():
   salario = float(input('Qual o seu salario? '))
+  aumento10 = salario * 0.10
+  aumento15 = salario * 0.15
   if salario > 1250.00:
-    print(f'Seu aumento será de {salario * 0.10}')
+    print(f'Seu novo salário será de {salario + aumento10}')
   else:
-    print(f'Seu aumento será de {salario * 0.15}')
+    print(f'Seu novo salário será de {salario + aumento15}')
 # aumentoSalarial()
 
 # 35.  ler comprimento 3 retas e dizer se podem ou não formar um triângulo
 def formarTriangulo():
-  l1 = int(input('Informe o valor do lado 1: '))
-  l2 = int(input('Informe o valor do lado 2: '))
-  l3 = int(input('Informe o valor do lado 3: '))
+  print('-='*20)
+  print('Analisador de triangulos')
+  print('-='*20)
+  l1 = float(input('Informe o valor do lado 1: '))
+  l2 = float(input('Informe o valor do lado 2: '))
+  l3 = float(input('Informe o valor do lado 3: '))
   ladoMaior = max(l1, l2, l3)
   ladoMenor = min(l1, l2, l3)
-  ladoMeio = 0
+  ladoMeio = l1
+  if l2 > l1 and l2 < l3 or l2 > l3 and l2 < l1:
+    ladoMeio = l2
+  if l3 > l1 and l3 < l2 or l3 > l2 and l3 < l1:
+    ladoMeio = l3
   if ladoMenor + ladoMeio > ladoMaior:
     print('forma triangulo')
   else:

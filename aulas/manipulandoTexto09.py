@@ -1,6 +1,7 @@
 # Fatiamento de String
 frase = "Trabalhando na gringa"
 print(frase[0:])
+print(frase^30) # alinhamento central
 # ANALISE DE STRING
 # Length
 print(len(frase)) #tamanho da string
