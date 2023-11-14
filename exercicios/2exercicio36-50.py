@@ -148,26 +148,43 @@ def jokenpo():
     [2] Tesoura
     [3] Sair do programa
     : '''))
-    escolhaMaquina = random.randint(0,2)
-
-    if escolhaUsuario == 0 and escolhaMaquina == 2:
-        print('Você ganhou! Pedra ganha de Tesoura')
-    elif escolhaMaquina == 0 and escolhaUsuario == 2:
-        print('Você perdeu! Pedra ganha de Tesoura')
-    elif escolhaUsuario == 1 and escolhaMaquina == 0:
-        print('Você ganhou! Papel ganha de Pedra')
-    elif escolhaMaquina == 1 and escolhaUsuario == 0:
-        print('Você perdeu! Papel ganha de Pedra')
-    elif escolhaUsuario == 2 and escolhaMaquina == 1:
-        print('Você ganhou! Tesoura ganha de Papel')
-    elif escolhaMaquina == 2 and escolhaUsuario == 1:
-        print('Você perdeu! Tesoura ganha de Papel')
-    elif escolhaUsuario == 3:
+    if escolhaUsuario == 3:
         print('o jogo foi divertido! Até mais.')
         time.sleep(1)
         sys.exit()
-    else:
-        print(f'Empate!sua escolha:{escolhaUsuario} adversário:{escolhaMaquina}')
-    time.sleep(4)
+
+    escolhaMaquina = random.randint(0,2)
+    print('JO')
+    time.sleep(0.2)
+    print('KEN')
+    time.sleep(0.3)
+    print('PÔ!')
+    time.sleep(0.3)
+
+    if escolhaUsuario == 0:
+        if escolhaMaquina == 0:
+            print('Deu empate')
+        elif escolhaMaquina == 1:
+            print('Vc perdeu! Papel ganha de pedra')
+        else:
+            print('Você ganhou! Pedra ganha de Tesoura')
+
+    if escolhaUsuario == 1:
+        if escolhaMaquina == 0:
+            print('Você ganhou! Papel ganha de Pedra')
+        elif escolhaMaquina == 1:
+            print('Deu empate')
+        else:
+            print('Você perdeu! Tesoura ganha de papel')
+
+    if escolhaUsuario == 2:
+        if escolhaMaquina == 0:
+            print('Você Perdeu! Pedra ganha de Tesoura')
+        elif escolhaMaquina == 1:
+            print('vc ganhou! Tesoura ganha de papel')
+        else:
+            print('Deu empate')
+
+    time.sleep(1.5)
     jokenpo()
 jokenpo()
