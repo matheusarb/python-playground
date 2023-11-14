@@ -3,6 +3,7 @@ import math
 import os
 import random
 import calendar
+import sys
 import time
 
 os.system('cls' if os.name == 'nt' else 'clear'); # limpar console
@@ -140,3 +141,33 @@ def calcularProduto(preco: float):
 # calcularProduto(100)
 
 # 45. programa pra jogar jokenpô (...)
+def jokenpo():
+    escolhaUsuario = int(input('''Qual sua opção?
+    [0] Pedra
+    [1] Papel
+    [2] Tesoura
+    [3] Sair do programa
+    : '''))
+    escolhaMaquina = random.randint(0,2)
+
+    if escolhaUsuario == 0 and escolhaMaquina == 2:
+        print('Você ganhou! Pedra ganha de Tesoura')
+    elif escolhaMaquina == 0 and escolhaUsuario == 2:
+        print('Você perdeu! Pedra ganha de Tesoura')
+    elif escolhaUsuario == 1 and escolhaMaquina == 0:
+        print('Você ganhou! Papel ganha de Pedra')
+    elif escolhaMaquina == 1 and escolhaUsuario == 0:
+        print('Você perdeu! Papel ganha de Pedra')
+    elif escolhaUsuario == 2 and escolhaMaquina == 1:
+        print('Você ganhou! Tesoura ganha de Papel')
+    elif escolhaMaquina == 2 and escolhaUsuario == 1:
+        print('Você perdeu! Tesoura ganha de Papel')
+    elif escolhaUsuario == 3:
+        print('o jogo foi divertido! Até mais.')
+        time.sleep(1)
+        sys.exit()
+    else:
+        print(f'Empate!sua escolha:{escolhaUsuario} adversário:{escolhaMaquina}')
+    time.sleep(4)
+    jokenpo()
+jokenpo()
