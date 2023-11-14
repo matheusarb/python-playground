@@ -3,13 +3,14 @@ import math
 import os
 import random
 import calendar
+import time
 
 os.system('cls' if os.name == 'nt' else 'clear'); # limpar console
 
 # 36. aprovar empréstimo com base no valor da casa, salário e anos para quitar
 def emprestimoBancario():
-    valCasa = float(input('Qual o valor da casa? '))
-    valSalario = float(input('Qual o seu salário? '))
+    valCasa = float(input('Qual o valor da casa? R$'))
+    valSalario = float(input('Qual o seu salário? R$'))
     prazoQuitacao = float(input('Em quantos anos será quitada? ')) * 12
     prestacaoMensal = valCasa / prazoQuitacao
     limiteSalario = valSalario * 0.30
@@ -26,15 +27,17 @@ def converterInteiro():
     num = int(input('Digite um nº inteiro: '))
     conversor = int(input('Escolha um dígito para o método de conversão:\n1. Binário\t2. octal\t3. hexadecimal '))
 
+    if conversor != 1 and conversor != 2 and conversor != 3:
+        print('Método de conversão inválido! Tente novamente')
+        time.sleep(1.0)
+        converterInteiro()
+
     if conversor == 1:
-        def convBin(num):
-            result_binario = ""
-            while num > 0:
-                resto = num % 2
-                result_binario = str(resto) + result_binario
-                num //= 2
-            print(result_binario)
-        convBin(num)
+        print(f'O nº convertido para binário é {bin(num)}')
+    elif conversor == 2:
+        print(f'O nº convertido para octal é {oct(num)[2:]}')
+    else:
+        print(f'O nº convertido para hexadecimal é {hex(num)}')
 # converterInteiro()
 
 # 38. comparar 2 numeros inteiros
