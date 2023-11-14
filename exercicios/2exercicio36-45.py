@@ -187,4 +187,4 @@ def jokenpo():
 
     time.sleep(1.5)
     jokenpo()
-jokenpo()
+# jokenpo()
