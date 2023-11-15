@@ -82,18 +82,31 @@ def nPrimo():
         print('ele é primo')
         # if primo % 1 == 0 and primo % primo == 0:
         #     print('Ele é primo')
-nPrimo()
+# nPrimo()
 
 # 53. Assistir à aula
-def palidromo():
-    frase = str(input('Digite uma frase: '))
-    frase = frase.strip().lower()
+def palindromo():
+    frase = str(input('Digite uma frase: ')).strip().split()
+    frase = ''.join(frase)
+    fraseInvertida = ''
 
-    if frase == frase[::-1]: #[::1] técnica de slicing em python. Está pegando a string de ponta a ponta (::) com o passo de -1, invertendo a ordem dos caracteres
+    for letras in range(len(frase) - 1, -1, -1):
+        fraseInvertida += frase[letras]
+    print(frase, fraseInvertida)
+    if frase == fraseInvertida:
         print('é um palíndromo')
     else:
-        print('não é um palíndromo')
-# palidromo()
+        print('NÃO é um palíndromo')
+# palindromo()
+def palindromoDois():
+    frase = input('Digite uma frase: ').strip()
+
+    print(frase, frase[::-1])
+    if frase == frase[::-1]:
+        print('Pal2: é um palíndromo')
+    else:
+        print('Pal2: NÃO é um palíndromo')
+# palindromoDois()
 
 # 54. atingiu maioridade
 def maioridade():
@@ -135,6 +148,7 @@ def desafio56():
     mulheresMenosDe20 = 0
 
     for p in range(0, 4):
+        print(f'------ {p}ª PESSOA -------')
         nome = input('Qual o seu nome? ').lower()
         idade = int(input('Qual a sua idade? '))
         sexo = input('Qual o seu sexo? ').lower()
@@ -143,11 +157,11 @@ def desafio56():
         if sexo == 'fem' and idade < 20:
             mulheresMenosDe20 = mulheresMenosDe20 + 1
 
-        if sexo == 'masc' and idade > homemMaiorIdade:
+        if sexo in 'mascMasc' and idade > homemMaiorIdade:
             homemMaiorIdade = idade
             nomeHomemMaisVelho = nome
 
-    mediaIdade = totalIdade / 2
+    mediaIdade = totalIdade / 4
     print(f'A média de idade do grupo é {mediaIdade}')
     print(f'O nome do homem mais velho é {nomeHomemMaisVelho}')
     print(f'Quantidade de mulheres com menos de 20 anos: {mulheresMenosDe20}')
