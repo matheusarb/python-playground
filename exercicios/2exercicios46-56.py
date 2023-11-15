@@ -71,9 +71,9 @@ def nPrimo():
 # 53. Assistir à aula
 def palidromo():
     frase = str(input('Digite uma frase: '))
-    frase = frase.replace(" ", "").lower()
+    frase = frase.strip().lower()
 
-    if frase == frase[::-1]:
+    if frase == frase[::-1]: #[::1] técnica de slicing em python. Está pegando a string de ponta a ponta (::) com o passo de -1, invertendo a ordem dos caracteres
         print('é um palíndromo')
     else:
         print('não é um palíndromo')
@@ -112,3 +112,27 @@ def mostrarPeso():
 # mostrarPeso()
 
 # 56.
+def desafio56():
+    totalIdade = 0
+    homemMaiorIdade = 0
+    nomeHomemMaisVelho = ""
+    mulheresMenosDe20 = 0
+
+    for p in range(0, 4):
+        nome = input('Qual o seu nome? ').lower()
+        idade = int(input('Qual a sua idade? '))
+        sexo = input('Qual o seu sexo? ').lower()
+        totalIdade += idade
+
+        if sexo == 'fem' and idade < 20:
+            mulheresMenosDe20 = mulheresMenosDe20 + 1
+
+        if sexo == 'masc' and idade > homemMaiorIdade:
+            homemMaiorIdade = idade
+            nomeHomemMaisVelho = nome
+
+    mediaIdade = totalIdade / 2
+    print(f'A média de idade do grupo é {mediaIdade}')
+    print(f'O nome do homem mais velho é {nomeHomemMaisVelho}')
+    print(f'Quantidade de mulheres com menos de 20 anos: {mulheresMenosDe20}')
+# desafio56()
