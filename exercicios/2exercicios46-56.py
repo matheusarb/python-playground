@@ -4,15 +4,15 @@ import os
 import random
 import calendar
 import sys
-import time
+from time import sleep
 
 os.system('cls' if os.name == 'nt' else 'clear'); # limpar console
 
 # 46. contagem regressiva fogos artifício de 10 a 0
 def regressivaFogos():
-    for r in range(10, 0, -1):
+    for r in range(10, -1, -1):
         print(r)
-    print(0)
+        sleep(0.2)
     print('Feliz ano novo!')
 # regressivaFogos()
 
