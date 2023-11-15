@@ -27,10 +27,9 @@ def numPares():
 # bicho pegou aqui
 def somaImpares():
     soma = 0
-    for impar in range(1, 501):
-        if impar % 2 != 0 and impar * 3 < 31:
-            print(f'Resultado parcial da soma: {soma}')
-            soma += impar
+    for i in range(1, 501, 2):
+        if i % 3 == 0:
+            soma += i
     print(soma)
 # somaImpares()
 
@@ -53,20 +52,37 @@ def somarPares():
 # somarPares()
 
 # 51. 1º termo e razão de uma PA. Assistir à aula
-def pa():
-    r = 2
-    for n in range(0, 11, r):
-        print(n)
-# pa()
+def progressaoAritmetica():
+    primeiroTermo = int(input('Digite o primeiro termo: '))
+    razao = int(input('Digite a razão: '))
+    decimoTermo = primeiroTermo + (10 - 1) * razao
+    for n in range(primeiroTermo, decimoTermo + razao, razao):
+        print(f'{n}', end=' ')
+# progressaoAritmetica()
 
-# 52. ler um inteiro e dizer se ele é primo
+# 52. ler um inteiro e dizer se ele é primo (divisível por ele mesmo e por 1)
 def nPrimo():
-    num = int(input('DIgite um nº: '))
-    # if num % num == 0 and num % 1 == 0:
-    #     print('É primo')
-    # else:
-    #     print('n é primo')
-# nPrimo()
+    primo = int(input('Digite um nº: '))
+    totDivisivel = 0
+    if primo == 0 or primo == 1:
+        print('0 e 1 não são considerados nºs primos')
+        return
+
+    for c in range(1, primo + 1):
+        if primo % c == 0:
+            print(f'\033[33m{c} ', end='')
+            totDivisivel += 1
+        else:
+            print(f'\033[31m{c} ', end='')
+
+    print(f'\n\033[97mO nº{primo} foi divisível {totDivisivel} vezes')
+    if totDivisivel > 2:
+        print('ele não é primo')
+    else:
+        print('ele é primo')
+        # if primo % 1 == 0 and primo % primo == 0:
+        #     print('Ele é primo')
+nPrimo()
 
 # 53. Assistir à aula
 def palidromo():
