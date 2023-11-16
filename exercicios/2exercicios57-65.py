@@ -15,8 +15,14 @@ def sexoPessoa():
         return
 
     while sexo != 'M' or sexo != 'F':
-        print('Informação inválida. Por favor, digite o seu sexo novamente. [M/F]')
+        sexo = input('Informação inválida. Por favor, digite o seu sexo novamente. [M/F]')
 # sexoPessoa()
+
+def sexoPessoaGuanabara():
+    sexo = input('informe seu sexo [M/F]: ').strip().upper()[0]
+    while sexo not in 'MF':
+        sexo = input('Informação inválida. Por favor, digite o seu sexo novamente. [M/F]')
+    print(f'Sexo {sexo} registrado')
 
 def sexoPessoa2():
     sexo = input('Informe o seu sexo [M/F]: ').upper()
@@ -104,17 +110,19 @@ def fatorial():
 # 63. SEQUÊNCIA DE FIBONACCI
 # tá errado. Fudeu
 def fibonacci():
-    nthNum = int(input('digite um nº inteiro: '))
+    nthNum = int(input('digite um nº: '))
     n1 = 0
     n2 = 1
-    fibSeq = []
-    index = 2
-    while index <= nthNum:
-        fibSeq[index] = fibSeq[index - 1] + fibSeq[index - 2]
-        index += 1
-    print(f'{n1} {n2}', end='')
-    print(f'{fibSeq} ')
-# fibonacci()
+    x = 0
+    count = 2
+    print(f'{n1} {n2}', end=' ')
+    while count < nthNum:
+        temp = n1
+        n1 = nthNum[count-1]
+        n2 = nthNum[count + 1]
+        x = temp + n2
+    print(f'{x} ')
+fibonacci()
 
 # 64. digitar n números, estabelecer condição de parada em '999', apresentar a soma e a quantidade de nºs digitados
 def somaEContador():
@@ -164,4 +172,4 @@ def mediaEMaiorEMenor():
 
     media = soma / counter
     print(f'A média foi de {media}\nmenor valor {menorNum}\nmaior valor {maiorNum}')
-mediaEMaiorEMenor()
+# mediaEMaiorEMenor()
