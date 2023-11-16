@@ -23,6 +23,7 @@ def sexoPessoaGuanabara():
     while sexo not in 'MF':
         sexo = input('Informação inválida. Por favor, digite o seu sexo novamente. [M/F]')
     print(f'Sexo {sexo} registrado')
+# sexoPessoaGuanabara()
 
 def sexoPessoa2():
     sexo = input('Informe o seu sexo [M/F]: ').upper()
@@ -36,28 +37,38 @@ def sexoPessoa2():
 
 # 58. usuário fala um número de 1 a 5, código gera aleatório. Verificar e se dizer se vencey
 # Adicionar palpite do usuário
-def guessingGame():
-  rand = random.randint(0, 10)
-  n = int(input('Digite um nº de 0 a 10: '))
-  palpite = 0
-  print(f'nº sorteado: {rand}')
-  if rand == n:
-    print(f'Parabéns, vc acertou no palpite de nº {palpite}')
-  else:
-    print('Tente outra vez.')
-    palpite += 1
-# guessingGame()
-
 def guessingGame2():
-  n = int(input('Digite um nº de 0 a 10: '))
+  n = int(input('Digite um palpite de 1 a 10: '))
   randomNum = random.randint(0, 10)
   palpite = 0
-  print(f'nº sorteado: {randomNum}')
+  # print(f'nº sorteado: {randomNum}')
   while n != randomNum:
-      randomNum = random.randint(0, 10)
+      if n > randomNum:
+          print(f'Menos... Tente mais uma vez')
+          n = int(input('Digite um palpite de 1 a 10: '))
+      elif n < randomNum:
+          print(f'Mais... Tente mais uma vez')
+          n = int(input('Digite um palpite de 1 a 10: '))
       palpite += 1
   print(f'Vc acertou! Vc levou {palpite} tentativas')
 # guessingGame2()
+def guessingGuanabara():
+    print('Pensei em um nº de 0 a 10. Será que você consegue acertar qual foi?')
+    numSorteado = random.randint(0, 10)
+    acertou = False
+    palpites = 0
+    while acertou == False:
+        numJogador = int(input('Digite o seu palpite entre 0 e 10: '))
+        palpites += 1
+        if numJogador == numSorteado:
+            acertou = True
+        else:
+            if numJogador > numSorteado:
+                print('Menos... tente mais uma vez')
+            elif numJogador < numSorteado:
+                print('Mais... tente mais uma vez')
+    print(f'Vc acertou o número em {palpites} tentativas. Parabéns!')
+# guessingGuanabara()
 
 # 59. ler dois valores e fazer
 def operacoes():
