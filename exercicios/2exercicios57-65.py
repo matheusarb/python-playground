@@ -137,32 +137,31 @@ def somaEContador():
 # Tá errado
 def mediaEMaiorEMenor():
     num1 = int(input('digite um nº: '))
-    counter = 0
-    soma = 0
-    media = 0
+    counter = 1
+
+    soma = num1
     maiorNum = 0
-    menorNum = 0
+    menorNum = num1
+
     resp = input('Você quer continuar? [S/N]').upper()
+
     if resp == 'N':
-        counter += 1
         print(f'Você só digitou um nº e ele foi o {num1}')
 
     while resp == 'S':
         num = int(input('digite um nº: '))
-
-
-        if num > maiorNum:
-            maiorNum = num
+        counter += 1
+        soma += num
 
         if menorNum == 0:
             menorNum = num
-        elif menorNum > num:
+        if menorNum > num:
             menorNum = num
+        if num > maiorNum:
+            maiorNum = num
 
-        counter += 1
-        soma += num
         resp = input('Você quer continuar? [S/N]').upper()
 
-    media = (soma + num1) / counter + 1
+    media = soma / counter
     print(f'A média foi de {media}\nmenor valor {menorNum}\nmaior valor {maiorNum}')
-# mediaEMaiorEMenor()
+mediaEMaiorEMenor()
