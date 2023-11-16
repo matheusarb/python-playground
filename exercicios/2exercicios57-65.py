@@ -70,7 +70,7 @@ def guessingGuanabara():
     print(f'Vc acertou o número em {palpites} tentativas. Parabéns!')
 # guessingGuanabara()
 
-# 59. ler dois valores e fazer
+# 59. MENU DE OPÇÕES: ler dois valores e fazer operações
 def operacoes():
     n1 = int(input('Digite um nº: '))
     n2 = int(input('Digite um nº: '))
@@ -105,35 +105,72 @@ def operacoes():
 # 60. Fatorial
 def fatorial():
     num = int(input('Digite um nº inteiro: '))
-    result = 1
-    count = num
+    result = num
+    count = num - 1
     while count != 0:
         result *= count
         count -= 1
+        print(f'{count}', end=' ')
 
     print(f'fatorial de {num} é {result}')
 # fatorial()
 
 # 61. Refazer o 51 de PA (pqp)
+def pa():
+    primeiroTermo = int(input('Primeiro termo: '))
+    razao = int(input('razão da PA: '))
+    termo = primeiroTermo
+    counter = 0
+    while counter <= 10:
+        if counter == 10:
+            print(f'{termo} -> Pausa', end='')
+        else:
+            print(f'{termo} -> ', end='')
+        termo += razao
+        counter += 1
+# pa()
 
 # 62. Melhorar o 61 (PQP)
+def pa2():
+    primeiroTermo = int(input('Primeiro termo: '))
+    razao = int(input('razão da PA: '))
+    termo = primeiroTermo
+    counter = 0
+    total = 10
+    maisTermos = 0
+    while maisTermos != 0:
+        total += maisTermos
+        while counter <= total:
+            if counter == 10:
+                print(f'{termo} -> Pausa')
+
+            else:
+                print(f'{termo} -> ', end='')
+            termo += razao
+            counter += 1
+# pa2()
 
 # 63. SEQUÊNCIA DE FIBONACCI
 # tá errado. Fudeu
+
 def fibonacci():
-    nthNum = int(input('digite um nº: '))
+    print('-'*30)
+    print('Sequência de Fibonacci')
+    print('-'*30)
+    nthNum = int(input('quantos termos vc quer mostrar? '))
     n1 = 0
     n2 = 1
-    x = 0
+    n3 = 0
     count = 2
-    print(f'{n1} {n2}', end=' ')
-    while count < nthNum:
-        temp = n1
-        n1 = nthNum[count-1]
-        n2 = nthNum[count + 1]
-        x = temp + n2
-    print(f'{x} ')
-fibonacci()
+    print(f'{n1} {n2} ', end='')
+    while count <= nthNum:
+        n3 = n1 + n2
+        n1 = n2
+        n2 = n3
+        print(f'{n3} ', end='')
+        count += 1
+    print('Fim')
+# fibonacci()
 
 # 64. digitar n números, estabelecer condição de parada em '999', apresentar a soma e a quantidade de nºs digitados
 def somaEContador():
