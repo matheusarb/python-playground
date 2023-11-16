@@ -115,3 +115,22 @@ def fibonacci():
     print(f'{n1} {n2}', end='')
     print(f'{fibSeq} ')
 # fibonacci()
+
+# 64. digitar n números, estabelecer condição de parada em '999', apresentar a soma e a quantidade de nºs digitados
+def somaEContador():
+    num = int(input('digite um nº: '))
+    soma = 0
+    count = 0
+    if num == 999:
+        soma += num
+        count += 1
+        print(f'foram digitados {count} nºs e a soma é {soma}')
+
+    while num != 999:
+        soma += num
+        count += 1
+        num = int(input('digite um nº: '))
+    print(f'foram digitados {count} nºs e a soma é {soma}')
+# somaEContador()
+
+# 65.
