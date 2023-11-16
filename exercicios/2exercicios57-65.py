@@ -97,4 +97,21 @@ def fatorial():
     print(f'fatorial de {num} é {result}')
 # fatorial()
 
-# 61.
+# 61. Refazer o 51 de PA (pqp)
+
+# 62. Melhorar o 61 (PQP)
+
+# 63. SEQUÊNCIA DE FIBONACCI
+# fudeu
+def fibonacci():
+    nthNum = int(input('digite um nº inteiro: '))
+    n1 = 0
+    n2 = 1
+    fibSeq = []
+    index = 2
+    while index <= nthNum:
+        fibSeq[index] = fibSeq[index - 1] + fibSeq[index - 2]
+        index += 1
+    print(f'{n1} {n2}', end='')
+    print(f'{fibSeq} ')
+# fibonacci()
