@@ -102,7 +102,7 @@ def fatorial():
 # 62. Melhorar o 61 (PQP)
 
 # 63. SEQUÊNCIA DE FIBONACCI
-# fudeu
+# tá errado. Fudeu
 def fibonacci():
     nthNum = int(input('digite um nº inteiro: '))
     n1 = 0
