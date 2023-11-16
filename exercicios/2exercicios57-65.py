@@ -85,4 +85,16 @@ def operacoes():
         escolha = int(input('[1]somar\n[2]multiplicar\n[3]maior\n[4]novos números\n[5]sair'))
 # operacoes()
 
-# 60.
+# 60. Fatorial
+def fatorial():
+    num = int(input('Digite um nº inteiro: '))
+    result = 1
+    count = num
+    while count != 0:
+        result *= count
+        count -= 1
+
+    print(f'fatorial de {num} é {result}')
+# fatorial()
+
+# 61.
