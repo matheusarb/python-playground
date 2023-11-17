@@ -65,10 +65,11 @@ def parOuImpar():
 
         if jogador == 'par' or jogador == '0':
             if resultado % 2 == 0:
+                print(f'Você jogou ')
                 print(f'Você venceu!')
                 vitorias += 1
             elif resultado % 2 != 0:
-                print(f'Você perdeu :( Vitórias consecutivas: {vitorias}')
+                print(f'Você perdeu :(\nVitórias consecutivas: {vitorias}')
                 break
 
         if jogador == 'impar' or jogador == '1':
@@ -76,7 +77,47 @@ def parOuImpar():
                 print(f'Você venceu!')
                 vitorias += 1
             elif resultado % 2 == 0:
-                print(f'Você perdeu :( Vitórias consecutivas: {vitorias}')
+                print(f'Você perdeu :(\nVitórias consecutivas: {vitorias}')
                 break
 # parOuImpar()
 
+def parOuImpar2():
+    vitorias = 0
+
+    while True:
+        total = 0
+        print('*'*10)
+        print(' Par ou Ímpar ')
+        print('*'*10)
+        numJogador = int(input('Digite um nº entre 0 e 10: '))
+        computador = randint(0,10)
+        escolhaJogador = input('Pár ou Ímpar? [P/I]').strip().lower()
+
+        total = numJogador + computador
+
+        if escolhaJogador == 'p':
+            print('-'*10)
+            if total % 2 == 0:
+                print(f'Vc jogou {numJogador} e o computador {computador}. Total deu {total} e é PAR.\nVc GANHOU!')
+                vitorias += 1
+                print('-' * 10)
+            elif total % 2 != 0:
+                print(f'Vc jogou {numJogador} e o computador {computador}. Total deu {total} e é IMPAR.\nVocê PERDEU')
+                print(f'Total de vitorias: {vitorias}')
+                print('-' * 10)
+                break
+
+        if escolhaJogador == 'i':
+            print('-' * 10)
+            if total % 2 != 0:
+                print(f'Vc jogou {numJogador} e o computador {computador}. Total deu {total} e é IMPAR.\nVc GANHOU')
+                vitorias += 1
+                print('-' * 10)
+            elif total % 2 == 0:
+                print(f'Vc jogou {numJogador} e o computador {computador}. Total deu {total} e é PAR.\nVc PERDEU')
+                print(f'Total de vitorias: {vitorias}')
+                print('-' * 10)
+                break
+# parOuImpar2()
+
+# 69.
