@@ -120,4 +120,33 @@ def parOuImpar2():
                 break
 # parOuImpar2()
 
-# 69.
+# 69. ler idade e sexo de várias pessoas
+def cadastro():
+    maiores = homens = mulheresMenos20 = 0
+
+    while True:
+        idade = int(input('Qual a sua idade? '))
+        sexo = input('Qual o seu sexo? [M/F] ').strip().lower()
+
+        if sexo == 'm':
+            homens += 1
+            if idade > 17:
+                maiores += 1
+
+        if sexo == 'f':
+            if 17 < idade < 20:
+                mulheresMenos20 += 1
+                maiores += 1
+            elif idade < 20:
+                mulheresMenos20 += 1
+
+        continuar = input('Deseja continuar? [S/N]').strip().lower()
+        if continuar == 'n':
+            break
+    print('-'*10)
+    print(f'\nMaiores de idade: {maiores}')
+    print(f'Quantidade de homens: {homens}')
+    print(f'Mulheres com menos de 20 anos: {mulheresMenos20}')
+# cadastro()
+
+# 70.
