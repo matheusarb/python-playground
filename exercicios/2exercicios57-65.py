@@ -161,7 +161,7 @@ def fibonacci():
     n1 = 0
     n2 = 1
     n3 = 0
-    count = 2
+    count = 3
     print(f'{n1} {n2} ', end='')
     while count <= nthNum:
         n3 = n1 + n2
@@ -169,7 +169,7 @@ def fibonacci():
         n2 = n3
         print(f'{n3} ', end='')
         count += 1
-    print('Fim')
+    print('-> Fim')
 # fibonacci()
 
 # 64. digitar n números, estabelecer condição de parada em '999', apresentar a soma e a quantidade de nºs digitados
@@ -178,14 +178,14 @@ def somaEContador():
     soma = 0
     count = 0
     if num == 999:
-        soma += num
-        count += 1
-        print(f'foram digitados {count} nºs e a soma é {soma}')
+        print(f'Você digitou {num}. O programa irá encerrar sem somar')
+        return
 
     while num != 999:
         soma += num
         count += 1
         num = int(input('digite um nº: '))
+
     print(f'foram digitados {count} nºs e a soma é {soma}')
 # somaEContador()
 
@@ -219,5 +219,5 @@ def mediaEMaiorEMenor():
         resp = input('Você quer continuar? [S/N]').upper()
 
     media = soma / counter
-    print(f'A média foi de {media}\nmenor valor {menorNum}\nmaior valor {maiorNum}')
+    print(f'A média foi de {media:.2f}\nmenor valor {menorNum}\nmaior valor {maiorNum}')
 # mediaEMaiorEMenor()
