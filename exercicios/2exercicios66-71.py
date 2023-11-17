@@ -43,9 +43,9 @@ def tabuadaMultipla():
 
     while True:
         count = 1
-        print('-' * 12)
+        print('-' * 30)
         num = int(input('Quer ver a tabuada de qual valor?: '))
-        print('-' * 12)
+        print('-' * 30)
 
         if num >= 0:
             while count < 11:
@@ -54,6 +54,21 @@ def tabuadaMultipla():
         else:
             print('FIM das tabuadas')
 # tabuadaMultipla()
+
+def tabuadaMultipla2():
+    while True:
+        n = int(input('digite nº: '))
+        print('-'*30)
+
+        if n < 0:
+            break
+
+        for c in range(1, 11):
+            print(f'{n} x {c} = {n * c}')
+
+        print('-'*30)
+    print('Fim das tabuadas')
+tabuadaMultipla2()
 
 # 68. jogo do par ou ímpar
 def parOuImpar():
@@ -180,8 +195,68 @@ def compra():
 
     print('-'*10)
     print(f'Total da compra: {totalCompra:.2f}')
-    print(f'Produtos + de 1k: {maisDe1000}')
+    print(f'Produtos + de 1.000 reais: {maisDe1000}')
     print(f'Produto mais barato: {maisBarato}')
 # compra()
 
-# 71.
+# 71. Caixa Eletrônico. 1. Valor a ser sacado(int) 2. Programa indica quantas cédulas de cada valor serão entregues
+# cédulas de: 50, 20, 10, 1
+def caixaEletronico1():
+    saque = int(input('Digite o valor a ser sacado: '))
+    nota50 = nota20 = nota10 = nota1 = 0
+    valorDeduzido = 0
+
+    if saque > 0:
+        while saque != 0:
+            if saque % 2 == 0:
+                while saque % 50 == 0:
+                    nota50 += 1
+                    saque = saque - (saque / 2)
+
+            while saque % 20 == 0:
+                nota20 += 1
+                saque -= (saque / 5)
+
+            while saque % 10 == 0:
+                nota10 += 1
+                saque -= (saque / 10)
+
+            while saque % 1 == 0:
+                nota1 += 1
+                saque -= (saque / 100)
+
+    print(f'Total de {nota50} cédulas de R$ 50')
+    print(f'Total de {nota20} cédulas de R$ 20')
+    print(f'Total de {nota10} cédulas de R$ 10')
+    print(f'Total de {nota1} cédulas de R$ 10')
+# caixaEletronico1()
+
+def caixaEletronico2():
+    saque = int(input('Digite o valor a ser sacado: '))
+    nota50 = nota20 = nota10 = nota1 = 0
+    valorDeduzido = 0
+
+    if saque > 0:
+        while saque != 0:
+            if saque % 2 == 0:
+                while saque % 50 == 0:
+                    nota50 += 1
+                    saque = saque - (saque / 2)
+
+            while saque % 20 == 0:
+                nota20 += 1
+                saque -= (saque / 5)
+
+            while saque % 10 == 0:
+                nota10 += 1
+                saque -= (saque / 10)
+
+            while saque % 1 == 0:
+                nota1 += 1
+                saque -= (saque / 100)
+
+    print(f'Total de {nota50} cédulas de R$ 50')
+    print(f'Total de {nota20} cédulas de R$ 20')
+    print(f'Total de {nota10} cédulas de R$ 10')
+    print(f'Total de {nota1} cédulas de R$ 10')
+# caixaEletronico2()
