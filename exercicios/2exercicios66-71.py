@@ -1,4 +1,5 @@
 import os
+from random import randint
 
 os.system('cls' if os.name == 'nt' else 'clear') # limpar console
 
@@ -35,21 +36,47 @@ def somaEContador2():
     print(f'A soma é {soma} e a qntidade de nºs usados foi {count}')
 # somaEContador2()
 
-# 67. tabuada pra vários inputs diferentes
+# 67. Tabuada pra vários inputs diferentes
 def tabuadaMultipla():
     num = 0
     count = 1
 
     while True:
         count = 1
-        num = int(input('Digite um nº: '))
+        print('-' * 12)
+        num = int(input('Quer ver a tabuada de qual valor?: '))
+        print('-' * 12)
 
         if num >= 0:
             while count < 11:
                 print(f'{num} * {count} = {num*count}')
                 count += 1
         else:
-            print('FIM')
+            print('FIM das tabuadas')
 # tabuadaMultipla()
 
-# 68.
+# 68. jogo do par ou ímpar
+def parOuImpar():
+    vitorias = 0
+
+    while True:
+        jogador = input('Par[0] ou ímpar[1]? ').strip().lower()
+        resultado = randint(0, 20)
+
+        if jogador == 'par' or jogador == '0':
+            if resultado % 2 == 0:
+                print(f'Você venceu!')
+                vitorias += 1
+            elif resultado % 2 != 0:
+                print(f'Você perdeu :( Vitórias consecutivas: {vitorias}')
+                break
+
+        if jogador == 'impar' or jogador == '1':
+            if resultado % 2 != 0:
+                print(f'Você venceu!')
+                vitorias += 1
+            elif resultado % 2 == 0:
+                print(f'Você perdeu :( Vitórias consecutivas: {vitorias}')
+                break
+# parOuImpar()
+
