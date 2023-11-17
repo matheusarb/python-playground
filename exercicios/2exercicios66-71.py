@@ -127,6 +127,8 @@ def cadastro():
     while True:
         idade = int(input('Qual a sua idade? '))
         sexo = input('Qual o seu sexo? [M/F] ').strip().lower()
+        while sexo not in 'mf':
+            sexo = input('Qual o seu sexo? [M/F] ').strip().lower()
 
         if sexo == 'm':
             homens += 1
@@ -144,7 +146,7 @@ def cadastro():
         if continuar == 'n':
             break
     print('-'*10)
-    print(f'\nMaiores de idade: {maiores}')
+    print(f'\nMaiores de 18 anos: {maiores}')
     print(f'Quantidade de homens: {homens}')
     print(f'Mulheres com menos de 20 anos: {mulheresMenos20}')
 # cadastro()
