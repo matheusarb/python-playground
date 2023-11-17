@@ -35,3 +35,21 @@ def somaEContador2():
     print(f'A soma é {soma} e a qntidade de nºs usados foi {count}')
 # somaEContador2()
 
+# 67. tabuada pra vários inputs diferentes
+def tabuadaMultipla():
+    num = 0
+    count = 1
+
+    while True:
+        count = 1
+        num = int(input('Digite um nº: '))
+
+        if num >= 0:
+            while count < 11:
+                print(f'{num} * {count} = {num*count}')
+                count += 1
+        else:
+            print('FIM')
+# tabuadaMultipla()
+
+# 68.
