@@ -151,4 +151,37 @@ def cadastro():
     print(f'Mulheres com menos de 20 anos: {mulheresMenos20}')
 # cadastro()
 
-# 70.
+# 70. ler nome e preco de varios produtos e mostrar: 1.Total gasto na compra 2.produtos q custam + de 1k 3.Nome produto + barato
+def compra():
+    totalCompra = 0.0
+    maisDe1000 = 0
+    maisBarato = ''
+    precoMaisBarato = 0
+
+    while True:
+        nomeProduto = input('Qual o nome do produto? ')
+        preco = float(input('Qual o preco dele? R$'))
+
+
+        if precoMaisBarato == 0:
+            precoMaisBarato = preco
+        elif preco < precoMaisBarato:
+            precoMaisBarato = preco
+            maisBarato = nomeProduto
+
+        if preco > 1000:
+            maisDe1000 += 1
+
+        totalCompra += preco
+
+        continuar = input('Deseja continuar a compra? [S/N] ').strip().lower()
+        if continuar == 'n':
+            break
+
+    print('-'*10)
+    print(f'Total da compra: {totalCompra:.2f}')
+    print(f'Produtos + de 1k: {maisDe1000}')
+    print(f'Produto mais barato: {maisBarato}')
+# compra()
+
+# 71.
