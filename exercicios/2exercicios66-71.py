@@ -216,10 +216,9 @@ def caixaEletronico1():
         if total >= cedula:
             total -= cedula
             totCedulas += 1
-
         else:
-            if totCedulas > 0:
-                print(f'{totCedulas} cédulas de {cedula} reais')
+            print(f'{totCedulas} cédulas de R${cedula} reais')
+            totCedulas = 0
 
             if cedula == 50:
                 cedula = 20
@@ -227,11 +226,9 @@ def caixaEletronico1():
                 cedula = 10
             elif cedula == 10:
                 cedula = 1
-
-            totCedulas = 0
-
-            if total == 0:
+            elif total == 0:
                 break
+
 caixaEletronico1()
 
 def caixaEletronico2():
