@@ -228,8 +228,7 @@ def caixaEletronico1():
                 cedula = 1
             elif total == 0:
                 break
-
-caixaEletronico1()
+# caixaEletronico1()
 
 def caixaEletronico2():
     saque = int(input('Digite o valor a ser sacado: '))
