@@ -78,21 +78,29 @@ def tuplaPlay():
     for num in tupla:
         if num % 2 == 0:
             print(f'{num} ', end='')
-tuplaPlay()
+# tuplaPlay()
 
 # 76. tupla com nome de produtos e seus respectivos preços
 # organize de forma tabular
 def produtosOrg():
-    produtos = ('Tv', 2000, 'Jogo', 500, 'caneta', 10)
+    produtos = ('Tv', 2000.23,
+                'Jogo', 500.90,
+                'caneta', 10.87)
 
+    print('-='*20)
+    print(f'{"Lista dos Produtos":^40}')
+    print('-='*20)
     for items in range(0, len(produtos), 2):
-        print(f'{produtos[items]}..........R$ {produtos[items + 1]}')
+        print(f'{produtos[items]:.<20} R$ {produtos[items + 1]:>7.2f}')
 # produtosOrg()
 
 # 77. tupla com várias palavras
 def vogais():
-    tupla = ('pao', 'azeite', 'camarao')
+    palavras = ('pao', 'azeite', 'camarao')
 
-    splitedTup = tupla
-    print(splitedTup)
-# vogais()
+    for palavra in palavras:
+        print(f'\nna palavra {palavra} temos ', end='')
+        for vogais in palavra:
+            if vogais.lower() in 'aeiou':
+                print(vogais, end=' ')
+vogais()
