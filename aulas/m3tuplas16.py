@@ -4,6 +4,7 @@
 # 3. NÃO podemos deletar um item específico dentro da Tupla através do del()
 
 lanche = ('hamb', 'cerveja', 'pizza')
+
 print('\033[4;31m-\033[m', lanche[1])
 print('\033[4;31m-\033[m', lanche[1:])
 print('\033[4;31m-\033[m', lanche[:2])

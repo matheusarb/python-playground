@@ -38,13 +38,13 @@ def numAleatorios():
 
 # 75. ler 4 valores e guardá-los na tupla
 # a) quantas vezes o 9 apareceu; b) posição do 1º valor 3; c) quais foram os números pares
-# incompleto
+# feito usando List
 def tuplaPlay():
     tupla = (int(input('digite um nº de 0 a 10: ')), int(input('digite um nº de 0 a 10: ')), int(input('digite um nº de 0 a 10: ')), int(input('digite um nº de 0 a 10: ')))
     nove = 0
     posicao3 = 0
     pos = 0
-    pares = ()
+    pares = []
 
     for pos, n in enumerate(tupla):
         if n == 9:
@@ -54,9 +54,27 @@ def tuplaPlay():
             posicao3 = pos
 
         if n % 2 == 0:
+            pares.append(n)
 
-
+    print(f'vc digitou os valores {tupla}')
     print(f'O 9 apareceu {nove} vez(es)')
-    print(f'O 3 apareceu na posição {posicao3} pela 1ª vez')
+    print(f'O 3 apareceu na {posicao3}ª posição pela 1ª vez')
+    print(f'os pares são: {pares}')
+# tuplaPlay()
 
-tuplaPlay()
+# 76. tupla com nome de produtos e seus respectivos preços
+# organize de forma tabular
+def produtosOrg():
+    produtos = ('Tv', 2000, 'Jogo', 500, 'caneta', 10)
+
+    for items in range(0, len(produtos), 2):
+        print(f'{produtos[items]}..........R$ {produtos[items + 1]}')
+# produtosOrg()
+
+# 77. tupla com várias palavras
+def vogais():
+    tupla = ('pao', 'azeite', 'camarao')
+
+    splitedTup = tupla
+    print(splitedTup)
+# vogais()
