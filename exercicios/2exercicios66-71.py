@@ -203,7 +203,7 @@ def compra():
 # cédulas de: 50, 20, 10, 1
 def caixaEletronico1():
     print('='*30)
-    print('{:^30}'.format('BDC (Banco do Caralho)'))
+    print('{:^30}'.format('BDC (Banco do C)'))
     print('='*30)
 
     saque = int(input('Qual o valor a ser sacado? R$ '))
