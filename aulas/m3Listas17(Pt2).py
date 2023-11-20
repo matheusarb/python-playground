@@ -27,7 +27,26 @@ galera.append(teste[:])
 teste[0] = 'jr duble'
 teste[1] = 40
 galera.append(teste[:])
+galera[1][0] = 'Luiggi'
+galera[1][1] = 2
 # print(galera)
+
+# for p in galera:
+    # print(f'Nome: {p[0]}, Nº: {p[1]}')
 
 print('-='*30)
 
+dados = []
+galera2 = []
+for p in range(0, 2):
+    dados.append(str(input('Digite seu nome: ')))
+    dados.append(int(input('Digite sua idade: ')))
+    galera2.append(dados[:])
+    # dados.clear()
+
+print(galera2)
+# for p in galera2:
+#     if p[1] >= 21:
+#         print(f'{p[0]} é maior')
+#     else:
+#         print(f'{p[0]} é menor')
