@@ -103,4 +103,4 @@ def vogais():
         for vogais in palavra:
             if vogais.lower() in 'aeiou':
                 print(vogais, end=' ')
-vogais()
+# vogais()
