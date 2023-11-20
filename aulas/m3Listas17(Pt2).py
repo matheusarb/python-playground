@@ -10,6 +10,7 @@ dados.append(10)
 pessoas = list()
 # lembrar sempre de fazer uma cópia
 pessoas.append(dados[:])
+print(pessoas)
 pessoas.append(['Maria', 9])
 # print(pessoas)
 # print(pessoas[0][0])
