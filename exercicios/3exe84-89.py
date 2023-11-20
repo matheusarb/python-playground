@@ -152,7 +152,7 @@ def matriz3por3():
     return lista
 # matriz3por3()
 
-def matriz2():
+def matriz3por32():
     matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
     for linha in range(0, 3):
@@ -163,7 +163,20 @@ def matriz2():
         for coluna in range(0, 3):
             print(f'[{matriz[linha][coluna]:^5}]', end='')
         print()
-matriz2()
+# matriz3por32()
+
+def matriz2por2():
+    matriz = [[0, 0], [0, 0]]
+
+    for l in range(0, 2):
+        for c in range(0, 2):
+            matriz[l][c] = int(input('Digite um valor: '))
+
+    for l in range(0, 2):
+        for c in range(0, 2):
+            print(f'[{matriz[l][c]:^5}]', end='')
+        print()
+# matriz2por2()
 
 # 87. Aprimorar o anterior e mostrar:
 # a) soma dos pares; b) soma dos vals da 3ª coluna; c) Maior valor da segunda linha
