@@ -63,8 +63,9 @@ def posicaoCorreta():
     lista = list()
     n = int(input('Cadastre um nº inteiro: '))
     lista.append(n)
+    count = 0
 
-    while len(lista) < 5:
+    while count < 4:
         menor = min(lista)
         maior = max(lista)
         n = int(input('Cadastre um nº inteiro: '))
@@ -73,9 +74,29 @@ def posicaoCorreta():
 
         if n > maior:
             lista.append(n)
+        count += 1
 
     print(f'Os valores digitados em ordem foram {lista}')
 # posicaoCorreta()
+
+def posicaoCorreta2():
+    lista = []
+    # maior = menor = 0
+    for i in range(0, 5):
+        n = int(input('Cadastre um nº inteiro: '))
+        if i == 0 or n > lista[-1]:
+            lista.append(n)
+        else:
+            pos = 0
+            while pos < len(lista):
+                if n < lista[pos]:
+                    lista.insert(pos, n)
+                    break
+                pos += 1
+    print(f'os valores em ordem: {lista}')
+# posicaoCorreta2()
+
+
 
 # 81. ler nºs e colocar numa lista. Depois, mostre:
 # a) Quantos números digitados; b) lista em ordem decrescente; c) Se o valor 5 foi digitado e está ou n
