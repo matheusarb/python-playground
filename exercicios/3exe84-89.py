@@ -69,7 +69,12 @@ def pesopessoas2():
     for p in principal:
         if p[1] == maior:
             print(f'{p[0]} ', end='')
-pesopessoas2()
+    print(f'O menor peso foi de {menor}. Peso de ', end='')
+    print()
+    for p in principal:
+        if p[1] == menor:
+            print(f'{p[0]} ', end='')
+# pesopessoas2()
 
 # 85. Lista de pares e ímpares
 def listaParesImpares():
@@ -89,9 +94,28 @@ def listaParesImpares():
         elif n % 2 != 0:
             nums[1].append(n)
 
+
     print(f'Valores pares: {nums[0]}')
     print(f'Valores impares: {nums[1]}')
 # listaParesImpares()
+
+def listaParesImpares2():
+    nums = [[], []]
+
+    for v in range(1, 8):
+        n = int(input(f'Digite o {v}º valor: '))
+
+        if n % 2 == 0:
+            nums[0].append(n)
+        elif n % 2 != 0:
+            nums[1].append(n)
+
+    nums[0].sort()
+    nums[1].sort()
+
+    print(f'Valores pares: {nums[0]}')
+    print(f'Valores impares: {nums[1]}')
+# listaParesImpares2()
 
 # 86. Criar matriz 3x3 e mostrar na formatação correta na tela
 # deu ruim
@@ -127,6 +151,19 @@ def matriz3por3():
 
     return lista
 # matriz3por3()
+
+def matriz2():
+    matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+    for linha in range(0, 3):
+        for coluna in range(0, 3):
+            matriz[linha][coluna] = int(input('digite um nº: '))
+
+    for linha in range(0, 3):
+        for coluna in range(0, 3):
+            print(f'[{matriz[linha][coluna]:^5}]', end='')
+        print()
+matriz2()
 
 # 87. Aprimorar o anterior e mostrar:
 # a) soma dos pares; b) soma dos vals da 3ª coluna; c) Maior valor da segunda linha
