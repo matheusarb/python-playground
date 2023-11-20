@@ -144,4 +144,23 @@ def listasParImpar():
     print(f'lista Impar: {listaImpar}')
 # listasParImpar()
 
-# 83. verificar se
+# 83. verificar se uma expressão (a * b) digitada está com os parênteses abertos e fechados na ordem correta
+# barril
+def parenteses():
+    expr = str(input('Digite sua expressão: '))
+    pilhaDeParenteses = []
+
+    for simb in expr:
+        if simb == '(':
+            pilhaDeParenteses.append(simb)
+        elif simb == ')':
+            if len(pilhaDeParenteses) > 0:
+                pilhaDeParenteses.pop()
+            else:
+                pilhaDeParenteses.append(simb)
+                break
+    if len(pilhaDeParenteses) > 0:
+        print('Sua expressão está INCORRETA')
+    else:
+        print('Sua expr está correta')
+# parenteses()
