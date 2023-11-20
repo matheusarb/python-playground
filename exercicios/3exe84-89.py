@@ -5,14 +5,13 @@ from random import randint
 def pessoasPesadasLeves():
     dados = list()
     pessoas = list()
-    contagem = maiorPeso = menorPeso = 0
+    maiorPeso = menorPeso = 0
 
     # cadastrar pessoas
     while True:
         dados.append(str(input('Digite seu nome: ')))
-        dados.append(int(input('Digite seu peso: ')))
+        dados.append(float(input('Digite seu peso: ')))
         pessoas.append(dados[:])
-        contagem += 1
         dados.clear()
 
         resp = input('deseja continuar? [S/N]')
@@ -28,8 +27,7 @@ def pessoasPesadasLeves():
         if v[1] < menorPeso:
             menorPeso = v[1]
 
-    # print(f'Pessoas cadastradas: {contagem}')
-
+    print(f'Ao todo foram cadastradas {len(pessoas)} pessoas')
     print(f'O maior peso foi de {maiorPeso}kg. Peso de ', end='')
     for i, v in enumerate(pessoas):
         if v[1] == maiorPeso:
@@ -39,8 +37,39 @@ def pessoasPesadasLeves():
     for i, v in enumerate(pessoas):
         if v[1] == menorPeso:
             print(f'{v[0]} ', end='')
-    print()
 # pessoasPesadasLeves()
+
+def pesopessoas2():
+    #usar temp
+    temp = []
+    principal = []
+    maior = menor = 0
+
+    while True:
+        temp.append(str(input('Nome: ')))
+        temp.append(int(input('Peso: ')))
+
+        if len(principal) == 0:
+            maior = menor = temp[1]
+        else:
+            if temp[1] > maior:
+                maior = temp[1]
+            if temp[1] < menor:
+                menor = temp[1]
+
+        principal.append(temp[:])
+        temp.clear()
+
+        resp = input('deseja continuar? [S/N]')
+        if resp in 'Nn':
+            break
+
+    print(f'Pessoas cadastradas: {len(principal)}')
+    print(f'O maior peso foi de {maior}. Peso de ', end='')
+    for p in principal:
+        if p[1] == maior:
+            print(f'{p[0]} ', end='')
+pesopessoas2()
 
 # 85. Lista de pares e ímpares
 def listaParesImpares():
