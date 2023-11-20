@@ -18,30 +18,29 @@ def pessoasPesadasLeves():
             break
 
     # descobrir maior e menor peso
-    for p in pessoas:
-        if p == 0:
-            maiorPeso = p[1]
-            menorPeso = p[1]
-        else:
-            if p[1] > maiorPeso:
-                maiorPeso = p[1]
-            if p[1] < menorPeso:
-                menorPeso = p[1]
+    for i, v in enumerate(pessoas):
+        if i == 0:
+            menorPeso = v[1]
+        if v[1] > maiorPeso:
+            maiorPeso = v[1]
+        if v[1] < menorPeso:
+            menorPeso = v[1]
 
-    print(f'Pessoas cadastradas: {contagem}')
+    # print(f'Pessoas cadastradas: {contagem}')
 
-    print(f'O maior peso foi de {maiorPeso}. Peso de ', end='')
-    for index, valor in enumerate(pessoas):
-        if index == 0:
-            menorPeso = valor[1]
-            maiorPeso = valor[1]
-        else:
-            if valor[1] >= maiorPeso:
-                print(f'{valor[0][1]} ', end='')
+    print(f'O maior peso foi de {maiorPeso}Kg. Peso de ', end='')
+    for i, v in enumerate(pessoas):
+        if v[1] == maiorPeso:
+            print(f'{v[0]} ', end='')
+    print()
+    print(f'O menor peso foi de {menorPeso}Kg. Peso de ', end='')
+    for i, v in enumerate(pessoas):
+        if v[1] == menorPeso:
+            print(f'{v[0]} ', end='')
+    print()
+pessoasPesadasLeves()
 
-    # print(f'O menor peso foi de {menorPeso}')
-# pessoasPesadasLeves()
-
+# 85. Lista de pares e ímpares
 def listaParesImpares():
     nums = list()
     pares = list()

@@ -7,12 +7,6 @@ def lerValores():
     for n in range(0,5):
         lista.append(int(input('Digite um valor: ')))
 
-    # duas formas de resolver:
-
-    # 1ª mais preguiçosa DEU CERTO
-    # print(f'O maior é {max(lista)} na posição {lista.index(max(lista))}')
-    # print(f'O menor é {min(lista)} na posição {lista.index(min(lista))}')
-
     # 2ª usando enumerate DEU CERTO
     posMaior = posMenor = 0
     for pos, n in enumerate(lista):
