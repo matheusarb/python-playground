@@ -50,3 +50,24 @@ length = len(lista2)-1
 for n1 in range(0, length):
     print(f'na pos {n1} o valor é {lista2[n1]}')
 print(len(lista2))
+
+numeros = list()
+# for nums in range(0, 5):
+#     numeros.append(int(input('Digite um valor: ')))
+
+print(numeros)
+
+# PECULIARIDADE DO PYTHON ABAIXO
+a = [1, 2, 3]
+# b = a
+# b[0] = 8
+# se eu fizer com q a lista b receba a (a=b), quando eu alterar valores em b eu ALTERO EM A TAMBÉM
+# isso, em python gera uma LIGAÇÃO, e não uma cópia.
+#
+# Para fazer cópia:
+# fazer com q B receba todos os itens de a por meio de fatiamento
+b = a[:]
+b[0] = 32
+print(f'Lista A: {a}')
+print(f'Lista B: {b}')
+
