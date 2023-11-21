@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 
 # 84. ler nome e peso de várias pessoas guardando em uma lista. Ao fim, mostre:
 # a) quantidade de cadastros (len da lista composta); b) lista com as pessoas mais pesadas c) pessoas mais leves
@@ -227,18 +228,56 @@ def megasena():
     numeroJogos = int(input('Qntos jogos quer sortear? '))
     jogo = 1
     listaNumerosPremiados = list()
-    print('-='*3 + f'SORTEANDO {numeroJogos} JOGOS' + '-='*3)
+    print('-='*3,  f' SORTEANDO {numeroJogos} JOGOS ', '-='*3)
 
     for sort in range(0, numeroJogos):
+        sleep(0.5)
         listaNumerosPremiados.clear()
         for n in range(0, 6):
             numPremiado = randint(1, 60)
-            if numPremiado not in listaNumerosPremiados:
-                listaNumerosPremiados.append(numPremiado)
+
+            while numPremiado in listaNumerosPremiados:
+                numPremiado = randint(1, 60)
+
+            listaNumerosPremiados.append(numPremiado)
         listaNumerosPremiados.sort()
         print(f'Jogo {jogo}: {listaNumerosPremiados}')
         jogo += 1
-megasena()
+# megasena()
+
+# buguei na tentativa dois
+def megasena2():
+    jogos = int(input('Qntos jogos quer sortear? '))
+    listaFinal = list()
+    seqPremiada = list()
+    count = 0
+
+    print('-'*30)
+    print(f'{"MEGA SENA":^30}')
+    print('-'*30)
+    sleep(0.8)
+    print('Preparando os sorteios...')
+    sleep(0.8)
+    while count < jogos:
+        for i in range(0, 6):
+            num = randint(1, 60)
+
+            while num in seqPremiada:
+                num = randint(1, 60)
+
+            seqPremiada.append(num)
+
+        seqPremiada.sort()
+        listaFinal.append(seqPremiada[:])
+        seqPremiada.clear()
+        count += 1
+
+    print('BOA SORTE!')
+    sleep(0.7)
+    for pos, sort in enumerate(listaFinal):
+        print(f'Jogo {pos+1}: {sort}')
+        sleep(0.6)
+megasena2()
 
 # 89. lista com nome e duas notas de todos os alunos
 # mais ou menos feito
