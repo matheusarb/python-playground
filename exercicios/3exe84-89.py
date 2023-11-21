@@ -277,7 +277,7 @@ def megasena2():
     for pos, sort in enumerate(listaFinal):
         print(f'Jogo {pos+1}: {sort}')
         sleep(0.6)
-megasena2()
+# megasena2()
 
 # 89. lista com nome e duas notas de todos os alunos
 # mais ou menos feito
@@ -300,9 +300,9 @@ def alunosEMedia():
     # for al in alunos:
     #     print(f'{al[0]}: {al[1]} e {al[2]}')
 
-    print(f'No.[:<3]NOME[:5<]MÉDIA')
+    print(f'{"No.":<4}{"NOME":<8}{"MÉDIA":<4}')
     for pos, val in enumerate(alunos):
-        print(f'{pos:<3} {val[0]:<5} {(val[1] + val[2]) / 2}')
+        print(f'{pos+1:<3} {val[0]:<5} {(val[1] + val[2]) / 2}')
 
     while True:
         mostrarNota = int(input('Mostrar nota de qual aluno? (999 sai do programa) '))
@@ -313,3 +313,34 @@ def alunosEMedia():
                 if pos == mostrarNota:
                     print(f'Notas de {v[0]} são {v[1]} e {v[2]}')
 # alunosEMedia()
+
+def alunos2():
+    ficha = list()
+    while True:
+        nome = str(input('Nome: '))
+        nota1 = float(input('Nota 1: '))
+        nota2 = float(input('Nota 2: '))
+        media = (nota1 + nota2) / 2
+        ficha.append([nome, [nota1, nota2], media])
+
+        resp = input('deseja continuar? [S/N]')
+        if resp in 'Nn':
+            break
+
+    print('-'*16)
+    print(f'{"BOLETIM":^16}')
+    print('-'*16)
+    print(f'{"No.":<4}{"NOME":<10}{"MÉDIA":<8}')
+    for pos, aluno in enumerate(ficha):
+        print(f'{pos:<4} {aluno[0]:<10} {aluno[2]:<8.2f}')
+
+    while True:
+        resp = int(input('Mostrar notas de qual aluno? (digite 999 para sair)'))
+        if resp == 999:
+            print('Finalizando...')
+            break
+        else:
+            for i, a in enumerate(ficha):
+                if i == resp:
+                    print(f'Notas de {a[0]} são {a[1][0]} e {a[1][1]}')
+# alunos2()
