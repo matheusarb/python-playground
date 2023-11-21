@@ -184,7 +184,7 @@ def matriz3por32():
             if matriz[1][c] > maiorVal:
                 maiorVal = matriz[1][c]
     print(f'maior valor da segunda linha é: {maiorVal}')
-matriz3por32()
+# matriz3por32()
 
 def matriz2por2():
     matriz = [[0, 0], [0, 0]]
@@ -201,7 +201,7 @@ def matriz2por2():
 
 # 87. Aprimorar o anterior e mostrar:
 # a) soma dos pares; b) soma dos vals da 3ª coluna; c) Maior valor da segunda linha
-# incompleto
+# FEITO NO MATRIZ3POR32
 def continuacao():
     lista = matriz3por3()
     pares = 0
@@ -226,16 +226,19 @@ def continuacao2():
 def megasena():
     numeroJogos = int(input('Qntos jogos quer sortear? '))
     jogo = 1
-    numerosPremiados = list()
+    listaNumerosPremiados = list()
     print('-='*3 + f'SORTEANDO {numeroJogos} JOGOS' + '-='*3)
 
     for sort in range(0, numeroJogos):
-        numerosPremiados.clear()
+        listaNumerosPremiados.clear()
         for n in range(0, 6):
-            numerosPremiados.append(randint(1, 60))
-        print(f'Jogo {jogo}: {numerosPremiados}')
+            numPremiado = randint(1, 60)
+            if numPremiado not in listaNumerosPremiados:
+                listaNumerosPremiados.append(numPremiado)
+        listaNumerosPremiados.sort()
+        print(f'Jogo {jogo}: {listaNumerosPremiados}')
         jogo += 1
-# megasena()
+megasena()
 
 # 89. lista com nome e duas notas de todos os alunos
 # mais ou menos feito
