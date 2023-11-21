@@ -154,16 +154,37 @@ def matriz3por3():
 
 def matriz3por32():
     matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    pares = terceiraCol = maiorVal = 0
 
     for linha in range(0, 3):
         for coluna in range(0, 3):
             matriz[linha][coluna] = int(input('digite um nº: '))
-
+    print('-='*30)
     for linha in range(0, 3):
         for coluna in range(0, 3):
             print(f'[{matriz[linha][coluna]:^5}]', end='')
+
+            # soma dos valores pares
+            if matriz[linha][coluna] % 2 == 0:
+                pares += matriz[linha][coluna]
         print()
-# matriz3por32()
+
+    print('-='*30)
+
+    print(f'A soma dos pares é: {pares}')
+    # soma dos vals na 3ª coluna
+    for l in range(0, 3):
+        terceiraCol += matriz[l][2]
+    print(f'A soma da 3ª coluna é: {terceiraCol}')
+    # maior valor segunda linha
+    for c in range(0, 3):
+        if c == 0:
+            maiorVal = matriz[1][c]
+        else:
+            if matriz[1][c] > maiorVal:
+                maiorVal = matriz[1][c]
+    print(f'maior valor da segunda linha é: {maiorVal}')
+matriz3por32()
 
 def matriz2por2():
     matriz = [[0, 0], [0, 0]]
@@ -192,6 +213,14 @@ def continuacao():
             pares += v
     print(pares)
 # continuacao()
+
+def continuacao2():
+    matriz = matriz3por32()
+
+    print(f'soma dos valores pares: {pares}')
+    print(f'soma dos valores terceira coluna: {terceiraCol}')
+    print(f'maior valor segunda linha é {maiorVal}')
+# continuacao2()
 
 # 88. rodar n sorteios da megasena de acordo com o input do usuário
 def megasena():
