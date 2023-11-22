@@ -74,12 +74,14 @@ def scoreJogo2():
     ranking = list()
     ranking = sorted(jogadores.items(), key=itemgetter(1), reverse=True)
 
+    print('VALORES SORTEADOS:')
     for k, v in jogadores.items():
         print(f'{k} tirou {v}')
     print('-='*30)
+    print('RANKING JOGADORES:')
     for i, v in enumerate(ranking):
         print(f'{i+1}º lugar: {v[0]} com {v[1]}')
-scoreJogo2()
+# scoreJogo2()
 
 # 92. ler nome, ano nasc e CTPS
 # a) adicionar a um dicionário se a CTPS for != de 0
@@ -95,7 +97,7 @@ def trabalhador():
         print(trabalhador)
         print(f'nome tem o valor de {trabalhador["nome"]}')
         print(f'idade tem o valor de {trabalhador["idade"]}')
-        print(f'ctps tem o valor de {trabalhador["ctps"]}')
+        print(f'ctps tem o valor de {trabalhador["CTPS"]}')
 
     trabalhador['contratacao'] = int(input('Ano de contratação: '))
     trabalhador['salario'] = int(input('Salário: '))
