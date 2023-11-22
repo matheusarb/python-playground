@@ -18,6 +18,25 @@ def aprovacao():
         aluno['situacao'] = 'Reprovado'
         print(f'Situação é igual a {aluno["situacao"]}')
 # aprovacao()
+    #
+def aprovacao2():
+    aluno = {}
+
+    aluno['nome'] = str(input('Nome: '))
+    aluno['media'] = float(input(f'Media de {aluno["nome"]}: '))
+    aluno['situacao'] = ''
+
+    if aluno['media'] > 7:
+        aluno['situacao'] = 'Aprovado'
+    elif 5.9 < aluno['media'] < 7:
+        aluno['situacao'] = 'Em recuperação'
+    else:
+        aluno['situacao'] = 'Reprovado'
+
+    print('-='*30)
+    for k, v in aluno.items():
+        print(f' - {k} é {v}')
+# aprovacao2()
 
 # 91. 4 players jogam um dado com resultados aleatórios. Guarde os dados em um dic
 # a) Mostre os valores sorteados; b) Ranking em ordem decrescente
@@ -178,9 +197,7 @@ def desempenhoJogador2():
             print(f'-- LEVANTAMENTO DE {jog["nome"]}: ')
             for count in range(0, len(dadosJogador['golsPorPartida'])):
                 print(f'No jogo {count} fez ')
-
-
-desempenhoJogador2()
+# desempenhoJogador2()
 
 
 
