@@ -1,6 +1,9 @@
 import datetime
 import sys
 from random import randint
+from time import sleep
+from operator import itemgetter
+
 # 90. ler nome e média de UM aluno, guardando em um dic. Mostrar
 def aprovacao():
     aluno = {}
@@ -58,6 +61,25 @@ def scoreJogo():
     for c in range(0, len(partida)):
         print(f'{c}º lugar: ')
 # scoreJogo()
+
+# 91. 4 players jogam um dado com resultados aleatórios. Guarde os dados em um dic
+# a) Mostre os valores sorteados; b) Ranking em ordem decrescente
+def scoreJogo2():
+    jogadores = {
+        'jogador1': randint(1, 6),
+        'jogador2': randint(1, 6),
+        'jogador3': randint(1, 6),
+        'jogador4': randint(1, 6)
+    }
+    ranking = list()
+    ranking = sorted(jogadores.items(), key=itemgetter(1), reverse=True)
+
+    for k, v in jogadores.items():
+        print(f'{k} tirou {v}')
+    print('-='*30)
+    for i, v in enumerate(ranking):
+        print(f'{i+1}º lugar: {v[0]} com {v[1]}')
+scoreJogo2()
 
 # 92. ler nome, ano nasc e CTPS
 # a) adicionar a um dicionário se a CTPS for != de 0
