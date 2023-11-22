@@ -61,7 +61,7 @@ pessoas = {'nome': 'Matheus',
 # adicionar elementos (NÃO PRECISA DE APPEND(), É SÓ ADD UMA CHAVE NA BRACKET NOTATION)
 # precisa inicializar com um valor
 pessoas['peso'] = 75
-# print(pessoas.keys())
+print(pessoas.keys())
 
 # criar dicionário dentro de lista:
 listaEstadoCapital = list()
@@ -69,13 +69,21 @@ estado1 = {'UF': 'BA', 'Capital': 'Salvador'}
 estado2 = {'UF': 'SP', 'Capital': 'São Paulo'}
 listaEstadoCapital.append(estado1)
 listaEstadoCapital.append(estado2)
+print(listaEstadoCapital)
+
+
 
 # print(listaEstadoCapital[0]['Capital'])
 # print(listaEstadoCapital)
 
+# for i in listaEstadoCapital:
+#     for k, v in i.items():
+#         print(f'{k} = {v}')
+
 for i in listaEstadoCapital:
-    for k, v in i.items():
-        print(f'{k} = {v}')
+    for val in i.values():
+        print(f'{val}', end =' ')
+    print()
 
 # adicionar dicionário a uma lista dinamicamente:
 
@@ -86,4 +94,4 @@ heroi = dict()
 #     heroi['poder'] = str(input('Poder do herói: '))
 #     avengers.append(heroi.copy())
 
-print(avengers)
+# print(avengers)
