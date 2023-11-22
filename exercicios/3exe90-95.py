@@ -162,7 +162,7 @@ def cadastroPessoas():
             pessoa['sexo'] = str(input('ERRO! Digite apenas M ou F: '))
 
         if pessoa['sexo'] in 'Ff':
-            listaMulheres.append(pessoa.copy())
+            listaMulheres.append(pessoa['nome'])
         cadastrados += 1
 
         listaPessoas.append(pessoa.copy())
@@ -187,7 +187,7 @@ def cadastroPessoas():
     print(f'A média de idade é {mediaIdade:.2f} anos')
     print(f'Lista de mulheres: {listaMulheres}')
     print(f'Lista das pessoas com idade acima da média{acimaMedia}')
-cadastroPessoas()
+# cadastroPessoas()
 
 # 95.
 def desempenhoJogador2():
