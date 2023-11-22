@@ -100,6 +100,51 @@ def desempenhoJogador():
     print(f'Foi um total de {desempenho["totalGols"]} gols.')
 # desempenhoJogador()
 
-# 94.
+# 94. nome sexo e idade de n pessoas. Cada um é um dictionary armazenando todos em uma lista
+# Mostrar: a) Quantidade cadastradas; b) Média de idade do grupo
+# c) Lista das mulheres; d) Lista de pessoas com idade acima da média
+def cadastroPessoas():
+    listaPessoas = list()
+    pessoa = dict()
+    listaMulheres = list()
+    acimaMedia = list()
+    cadastrados = mediaIdade = 0
+
+    while True:
+        pessoa['nome'] = str(input('Nome: '))
+        pessoa['idade'] = int(input('Idade: '))
+        pessoa['sexo'] = str(input('Sexo [M/F]: '))
+
+        if pessoa['sexo'] in 'Ff':
+            listaMulheres.append(pessoa.copy())
+        cadastrados += 1
+
+        listaPessoas.append(pessoa.copy())
+        pessoa.clear()
+
+        resp = str(input('Deseja cadastrar mais alguém? [S/N]'))
+        if resp in 'Nn':
+            break
+
+    for p in listaPessoas:
+        mediaIdade += p['idade']
+    mediaIdade = mediaIdade / len(listaPessoas)
+
+    for p in listaPessoas:
+        if p['idade'] > mediaIdade:
+            acimaMedia.append(p)
+
+    print(f'Nº de cadastrados foi de {cadastrados} pessoas')
+    print(f'A média de idade é {mediaIdade:.2f} anos')
+    print(f'Lista de mulheres: {listaMulheres}')
+    print(f'Lista das pessoas com idade acima da média{acimaMedia}')
+# cadastroPessoas()
+
+
+
+
+
+
+
 
 
