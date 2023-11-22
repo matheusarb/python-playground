@@ -140,8 +140,47 @@ def cadastroPessoas():
     print(f'Lista das pessoas com idade acima da média{acimaMedia}')
 # cadastroPessoas()
 
+# 95.
+def desempenhoJogador2():
+    desempenho = {}
+    listaJogadores = list()
+
+    while True:
+        desempenho['nome'] = str(input('Nome: '))
+        desempenho['partidas'] = int(input(f'Quantas partidas {desempenho["nome"]} jogou? '))
+        desempenho['golsPorPartida'] = []
+
+        for p in range(0, desempenho['partidas']):
+            desempenho['golsPorPartida'].append(int(input(f'Quantos gols na partida {p}? ')))
+
+        desempenho['golsTotais'] = 0
+        for gol in desempenho['golsPorPartida']:
+            desempenho['golsTotais'] += gol
+
+        listaJogadores.append(desempenho.copy())
+        desempenho.clear()
+        print('-'*30)
+
+        resp = str(input('Quer continuar? [S/N] '))
+        if resp in 'Nn':
+            break
 
 
+    print('-='*30)
+    print(f'cod     nome      gols       total')
+    for pos, jog in enumerate(listaJogadores):
+        print(f'{pos}    {jog["nome"]}    {jog["golsPorPartida"]}    {jog["golsTotais"]}')
+    print('-='*30)
+
+    dadosJogador = int(input('Mostrar dados de qual jogador?' ))
+    while True:
+        for dadosJogador, jog in enumerate(listaJogadores):
+            print(f'-- LEVANTAMENTO DE {jog["nome"]}: ')
+            for count in range(0, len(dadosJogador['golsPorPartida'])):
+                print(f'No jogo {count} fez ')
+
+
+desempenhoJogador2()
 
 
 
