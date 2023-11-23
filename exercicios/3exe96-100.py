@@ -46,13 +46,12 @@ def escreva2(msg):
     print('~'*length)
 
 
-escreva2('Olá, mudo')
+# escreva2('Olá, mudo')
 
 # 98. função 'contador' recebe 3 parâmetros (início, fim, passo)
 # Contar a) de 1 até 10, de 1 em 1
 # b) de 10 até 0, de 2 em 2
 # c) Uma contagem personalizada
-
 
 def contador():
     lin()
@@ -79,17 +78,20 @@ def contador():
         print(f'Contagem de {inicio} até {fim} de {passo} em {passo}')
         for i in range(inicio, fim - 1, -passo):
             print(i, end=' ')
+            sleep(0.2)
     elif passo < 0:
         print(f'Contagem de {inicio} até {fim} de {passo} em {passo}')
         for i in range(inicio, fim - 1, passo):
             print(i, end=' ')
+            sleep(0.2)
     else:
         print(f'Contagem de {inicio} até {fim} de {passo} em {passo}')
         for i in range(inicio, fim + 1, passo):
             print(i, end=' ')
+            sleep(0.2)
+    print('FIM!')
 
-
-# contador()
+contador()
 
 # 99. função 'maior' recebendo vários nºs e dizer qual é o maior
 def maior(*num):
