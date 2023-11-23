@@ -1,12 +1,16 @@
 from time import sleep
 from random import randint
 
+
 def titulo(txt: str):
-    print('-'*30)
+    print('-' * 30)
     print(f'{txt:^30}')
-    print('-'*30)
+    print('-' * 30)
+
+
 def lin():
-    print('-='*30)
+    print('-=' * 30)
+
 
 # 96. uma função para calcular a área do terreno
 def areaTerreno():
@@ -14,23 +18,35 @@ def areaTerreno():
 
     l = float(input('Largura (m): '))
     c = float(input('Comprimento (m): '))
+
     def calcularArea(largura, comprimento):
         a = l * c
         return a
 
     print(f'A área de um terreno {l} x {c} é de {calcularArea(l, c)}m²')
+
+
 # areaTerreno()
 
 
 # 97. função 'escreva' que recebe texto e mostre msg com tamanho adaptável(??)
 def escreva(txt: str):
-    length = len(txt) + 8
-    print('~'*length)
+    length = len(txt) + 4
+    print('~' * length)
     print(f'{txt:^{length}}')
-    print('~'*length)
-# escreva('Olá, mundo')
-# escreva('Matheus')
+    print('~' * length)
 
+
+escreva('Olá, mudo')
+
+def escreva2(msg):
+    length = len(msg) + 4
+    print('~'*length)
+    print(f'  {msg}')
+    print('~'*length)
+
+
+escreva2('Olá, mudo')
 
 # 98. função 'contador' recebe 3 parâmetros (início, fim, passo)
 # Contar a) de 1 até 10, de 1 em 1
@@ -99,6 +115,7 @@ def maior(*num):
 # b) a outra mostra a soma dos valores pares sorteados
 def sorteioepares():
     numeros = list()
+
     def sorteio(lista: list):
         count = 0
         print('Os nºs sorteados são: ', end='')
@@ -107,20 +124,24 @@ def sorteioepares():
             lista.append(n)
             print(n, end=' ')
             count += 1
-            del(n)
+            del (n)
         return lista
+
     sorteio(numeros)
+
     print()
+
     def somaPar(lista: list):
         soma = 0
         print(f'Os valores pares são ', end='')
         for n in lista:
             if n % 2 == 0:
-               print(n, end=' ')
-               soma += n
+                print(n, end=' ')
+                soma += n
         print()
         print(f'A soma dos valores pares é {soma}')
+
     somaPar(numeros)
 
 
-sorteioepares()
+# sorteioepares()
