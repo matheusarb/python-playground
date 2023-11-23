@@ -1,4 +1,5 @@
 from time import sleep
+from random import randint
 
 def titulo(txt: str):
     print('-'*30)
@@ -97,3 +98,29 @@ def maior(*num):
 # a) uma vai sortear 5 nºs e colocar nela
 # b) a outra mostra a soma dos valores pares sorteados
 def sorteioepares():
+    numeros = list()
+    def sorteio(lista: list):
+        count = 0
+        print('Os nºs sorteados são: ', end='')
+        while count < 5:
+            n = randint(0, 10)
+            lista.append(n)
+            print(n, end=' ')
+            count += 1
+            del(n)
+        return lista
+    sorteio(numeros)
+    print()
+    def somaPar(lista: list):
+        soma = 0
+        print(f'Os valores pares são ', end='')
+        for n in lista:
+            if n % 2 == 0:
+               print(n, end=' ')
+               soma += n
+        print()
+        print(f'A soma dos valores pares é {soma}')
+    somaPar(numeros)
+
+
+sorteioepares()
