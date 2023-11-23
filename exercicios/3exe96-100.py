@@ -37,7 +37,7 @@ def escreva(txt: str):
     print('~' * length)
 
 
-escreva('Olá, mudo')
+# escreva('Olá, mudo')
 
 def escreva2(msg):
     length = len(msg) + 4
@@ -91,25 +91,42 @@ def contador():
             sleep(0.2)
     print('FIM!')
 
-contador()
+# contador()
+
 
 # 99. função 'maior' recebendo vários nºs e dizer qual é o maior
-def maior(*num):
-    print('Analisando os valores passados')
-    sleep(0.7)
+def maior(* num):
+    print('Analisando os valores passados...')
+    sleep(0.4)
     m = 0
-    for i in num:
-        print(f'{i} ', end='')
-        if i == 0:
-            m = i
+    for valor in num:
+        print(f'{valor} ', end='')
+        if valor == 0:
+            m = valor
         else:
-            if i > m:
-                m = i
+            if valor > m:
+                m = valor
     print(f'Foram informados {len(num)} ao todo.')
     print(f'O maior é o {m}')
 
 
 # maior(2, 3, 4, 1, 7, 10, 9, 8)
+
+
+def maior2(* num):
+    titulo('Maior Nº')
+    m = 0
+    length = len(num)
+    if length == 0:
+        print('Lista de nºs vazia')
+    else:
+        for val in num:
+            print(val, end=' ')
+        print()
+        print(f'Foram informados {length} números. O maior é o {max(num)}')
+
+
+maior2(2, 3, 7, 1, 0, 12, 9, 32, 89, 4)
 
 
 # 100. criar uma lista e passar duas funções:
