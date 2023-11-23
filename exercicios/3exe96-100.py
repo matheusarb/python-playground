@@ -126,7 +126,7 @@ def maior2(* num):
         print(f'Foram informados {length} números. O maior é o {max(num)}')
 
 
-maior2(2, 3, 7, 1, 0, 12, 9, 32, 89, 4)
+# maior2(2, 3, 7, 1, 0, 12, 9, 32, 89, 4)
 
 
 # 100. criar uma lista e passar duas funções:
@@ -143,7 +143,6 @@ def sorteioepares():
             lista.append(n)
             print(n, end=' ')
             count += 1
-            del (n)
         return lista
 
     sorteio(numeros)
@@ -152,15 +151,15 @@ def sorteioepares():
 
     def somaPar(lista: list):
         soma = 0
-        print(f'Os valores pares são ', end='')
+        print(f'Os valores pares são: ', end='')
         for n in lista:
             if n % 2 == 0:
                 print(n, end=' ')
                 soma += n
         print()
-        print(f'A soma dos valores pares é {soma}')
+        print(f'A soma dos valores pares é: {soma}')
 
     somaPar(numeros)
 
 
-# sorteioepares()
+sorteioepares()
